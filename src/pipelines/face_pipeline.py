@@ -35,7 +35,7 @@ def get_face_embeddings(image_np):
     return encodings
 
 @st.cache_resource
-def get_trailed_model():
+def get_trained_model():
     X = []
     y = []
 
@@ -65,7 +65,7 @@ def get_trailed_model():
 
 def train_classifier():
     st.cache_resource.clear()
-    model_data = get_trailed_model()
+    model_data = get_trained_model()
     return bool(model_data)
 
 def predict_attendance(class_image_np):
@@ -73,7 +73,7 @@ def predict_attendance(class_image_np):
 
     detected_student = {}
 
-    model_data = get_trailed_model()
+    model_data = get_trained_model()
 
     if not model_data:
         return detected_student, [], len(encodings)
