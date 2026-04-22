@@ -9,7 +9,7 @@ from src.components.dialog_attendance_results import show_attendance_result
 @st.dialog('Voice Attendance')
 
 def voice_attendance_dialog(selected_subject_id):
-    st.write('Record audio of students studying I am present. Then AI eill recognize the students')
+    st.write('Record audio of students studying I am present. Then AI will recognize the students')
 
     audio_data = None
     
